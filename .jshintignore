@@ -1,0 +1,7 @@
+/.tmp/**
+/bower_components/**
+/build/**
+/node_modules/**
+/npm-cache/**
+/dist/**
+/vendor/**

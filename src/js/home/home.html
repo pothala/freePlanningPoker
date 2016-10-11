@@ -1,0 +1,41 @@
+<div class="container">
+</div>
+<div class="alert alert-info">
+  <h3>SignalPath Coding Challenge</h3>
+  <p> By: Ian Bolton</p>
+</div>
+
+<table st-pipe="$ctrl.callServer" st-safe-src="$ctrl.myDataset" st-table="$ctrl.localDataset"
+   class="table table-striped">
+  <thead>
+    <tr>
+      <th st-sort="briefTitle">Brief Title</th>
+      <th st-sort="leadSponsor">Lead Sponsor</th>
+      <th st-sort="completionDate">Completion Date</th>
+      <th st-sort="seeTrial">See Trial</th>
+    </tr>
+    <tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in $ctrl.displayed">
+      <td>{{row.brief_title}}</td>
+      <td>{{row.sponsors.lead_sponsor.agency}}</td>
+      <td>{{row.completion_date.value}}</td>
+      <td>
+        <a href="http://www.clinicaltrials.gov/show/{{row.id}}">
+          See Trial
+      </td>
+    </tr>
+  </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5" class="text-center">
+          <div st-pagination=""
+            st-items-by-page="10"
+            st-displayed-pages="10">
+          </div>
+        </td>
+      </tr>
+    </tfoot>
+</table>
